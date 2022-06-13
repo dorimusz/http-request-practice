@@ -21,9 +21,6 @@ axios.get('http://nemzetisport.hu')
 */
 
 
-
-
-
 /*
 //a getData async function, minden esetben egy ígérettel tér vissza, promiset ad vissza
 const getData = async () => {
@@ -33,8 +30,6 @@ const getData = async () => {
 }
 console.log(getData());
 */
-
-
 
 
 /*
@@ -51,9 +46,6 @@ promiseOfResponse.then((response) => {
 */
 
 
-
-
-
 //ugyanez async-await-tel:
 const run = async () => {
     const response = await axios.get('http://nemzetisport.hu');
@@ -61,9 +53,12 @@ const run = async () => {
     console.log(resStatus); //harmadszor
     return 5; //ha nincs benne ez a return, undefined jön vissza
 }
+
+
 //lefut az 1 és a 2, majd csak utána a run()
 console.log("1"); //először
-const promiseOfResult = run();
+const promiseOfResult = run(); //ez egy promise object
+console.log(promiseOfResult);
 promiseOfResult.then(
     (promiseResult) => {
         console.log(promiseResult); //negyedszerre, ami a return eredménye, vagyis az 5
